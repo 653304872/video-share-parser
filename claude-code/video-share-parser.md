@@ -1,0 +1,15 @@
+# /video-share-parser
+
+Parse the user's social-media share text or direct short link into a clean title and direct media URLs.
+
+Instructions:
+
+1. Extract the first `http/https` URL from the provided text.
+2. Call `https://parse.ideaflow.top/video/share/url/parse?url=<encoded_url>`.
+3. Prefer `video_url`; if absent, use `images[*].live_photo_url`, then `images[*].url`, then `cover_url`.
+4. Reply in Simplified Chinese.
+5. Default output should include only:
+   - `标题`
+   - `解析后链接`
+6. If there are multiple media links, list them all.
+7. If parsing fails or no URL is found, explain the reason clearly.

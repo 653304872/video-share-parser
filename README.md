@@ -209,3 +209,7 @@ python3 scripts/parse_video_share.py --json '你的短链'
 ## 致谢
 
 这个 skill 的解析能力当前建立在 `parse.ideaflow.top` 提供的接口之上，仓库本身负责把解析链路封装为可复用的 Codex skill 和本地脚本。
+
+## 一句话安装
+
+在仓库根目录执行：Codex 用 `mkdir -p ~/.codex/skills && ln -snf "$PWD" ~/.codex/skills/video-share-parser`，Claude Code 用 `mkdir -p ~/.claude/commands && ln -snf "$PWD/claude-code/video-share-parser.md" ~/.claude/commands/video-share-parser.md`，小龙虾/OpenClaw 用 `mkdir -p ~/.openclaw/skills && ln -snf "$PWD" ~/.openclaw/skills/video-share-parser`，然后重开会话即可。
