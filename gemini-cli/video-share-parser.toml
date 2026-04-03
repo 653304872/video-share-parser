@@ -8,11 +8,14 @@ Requirements:
 2. Call `https://parse.ideaflow.top/video/share/url/parse?url=<encoded_url>` using available tools.
 3. Prefer `video_url`; if absent, use `images[*].live_photo_url`, then `images[*].url`, then `cover_url`.
 4. Reply in Simplified Chinese.
-5. Default output should include only:
-   - `标题`
-   - `解析后链接`
-6. If there are multiple media links, list them all.
-7. If parsing fails or no URL is found, explain the reason clearly.
+5. Default output should be exactly:
+   - `标题：...`
+   - `下载链接：...`
+6. Prefer a short link for `下载链接` using a direct redirect shortener (prefer `is.gd` to avoid preview pages); if short-link creation fails, fall back to the original parser direct media URL.
+7. Treat `下载链接` as the parser's direct media URL (or its short link), not an uploaded file link.
+8. If the user also asks to download/send the video, first return `标题` + `下载链接`, then download the preferred media file and send/attach it if tools support that. Treat the file attachment as the stable delivery artifact.
+9. If there are multiple media links, list them all.
+10. If parsing fails or no URL is found, explain the reason clearly.
 
 User input:
 {{args}}
