@@ -240,3 +240,51 @@ ln -snf "$PWD/gemini-cli/video-share-parser.toml" ~/.gemini/commands/video-share
 ```
 
 安装完成后重开会话即可。
+
+## 通用安装提示词
+
+如果你想把安装动作直接交给 AI 工具执行，可以使用下面这段通用提示词：
+
+```text
+请帮我安装 Skill: video-share-parser
+
+- 仓库地址: https://github.com/653304872/video-share-parser
+- 建议源码目录: ~/.skills-src/video-share-parser/
+- Codex 安装目录: ~/.codex/skills/video-share-parser/
+- Claude Code 安装目录: ~/.claude/commands/video-share-parser.md
+- 龙虾 / OpenClaw 安装目录: ~/.openclaw/skills/video-share-parser/
+- Gemini CLI 安装目录: ~/.gemini/commands/video-share-parser.toml
+
+安装要求:
+1. 如果本地还没有源码，先执行 git clone https://github.com/653304872/video-share-parser.git ~/.skills-src/video-share-parser
+2. 如果源码已存在，先进入 ~/.skills-src/video-share-parser
+3. 按当前工具创建对应软链接
+4. 安装完成后提示我重开当前会话
+```
+
+对应工具的实际安装动作如下：
+
+```bash
+# 先准备源码
+mkdir -p ~/.skills-src
+if [ ! -d ~/.skills-src/video-share-parser/.git ]; then
+  git clone https://github.com/653304872/video-share-parser.git ~/.skills-src/video-share-parser
+fi
+cd ~/.skills-src/video-share-parser
+
+# Codex
+mkdir -p ~/.codex/skills
+ln -snf "$PWD" ~/.codex/skills/video-share-parser
+
+# Claude Code
+mkdir -p ~/.claude/commands
+ln -snf "$PWD/claude-code/video-share-parser.md" ~/.claude/commands/video-share-parser.md
+
+# 龙虾 / OpenClaw
+mkdir -p ~/.openclaw/skills
+ln -snf "$PWD" ~/.openclaw/skills/video-share-parser
+
+# Gemini CLI
+mkdir -p ~/.gemini/commands
+ln -snf "$PWD/gemini-cli/video-share-parser.toml" ~/.gemini/commands/video-share-parser.toml
+```
