@@ -212,4 +212,4 @@ python3 scripts/parse_video_share.py --json '你的短链'
 
 ## 一句话安装
 
-在仓库根目录执行：Codex 用 `mkdir -p ~/.codex/skills && ln -snf "$PWD" ~/.codex/skills/video-share-parser`，Claude Code 用 `mkdir -p ~/.claude/commands && ln -snf "$PWD/claude-code/video-share-parser.md" ~/.claude/commands/video-share-parser.md`，小龙虾/OpenClaw 用 `mkdir -p ~/.openclaw/skills && ln -snf "$PWD" ~/.openclaw/skills/video-share-parser`，然后重开会话即可。
+在仓库根目录执行：Codex 用 `mkdir -p ~/.codex/skills && ln -snf "$PWD" ~/.codex/skills/video-share-parser`，Claude Code 用 `mkdir -p ~/.claude/commands && ln -snf "$PWD/claude-code/video-share-parser.md" ~/.claude/commands/video-share-parser.md`，龙虾/OpenClaw 用 `mkdir -p ~/.openclaw/skills && ln -snf "$PWD" ~/.openclaw/skills/video-share-parser`，Gemini CLI 用 `mkdir -p ~/.gemini/commands && ln -snf "$PWD/gemini-cli/video-share-parser.toml" ~/.gemini/commands/video-share-parser.toml`，然后重开会话即可。
