@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Share Parser"
+  short_description: "接收分享文案，返回标题和解析后的媒体直链。"
+  default_prompt: "解析用户给出的分享文案或短链，提取真实链接，调用解析接口，并返回标题与解析后的媒体直链。"
